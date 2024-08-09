@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001
+      author: Arman T.
+      changes:
+        - createTable:
+            tableName: refresh_tokens
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: token
+                  type: VARCHAR(255)
+                  constraints:
+                    unique: true
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_user_id
+                    references: users(id)
+              - column:
+                  name: created_at
+                  type: TIMESTAMP WITHOUT TIME ZONE
+              - column:
+                  name: expiry_date
+                  type: TIMESTAMP WITHOUT TIME ZONE

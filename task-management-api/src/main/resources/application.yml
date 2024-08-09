@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: task-management
+
+  jpa:
+    properties:
+      hibernate.default_schema: public
+
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/task_service_db
+    username: postgres
+    password: postgres
+
+  liquibase:
+    enabled: true
+
+  jwt:
+    secret: n6lZ8azP6JXQ8zpM8yE9D6D9j+z1lM5eqhNx4sxk/mU=
